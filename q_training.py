@@ -19,4 +19,4 @@ for episodes in range(N_episodes):
 Q = game.Q
 
 filename = "Q_epsilon_09_Nepisodes_{}_N={}.p".format(N_episodes, N)
-pickle.dump(Q, open(p_files/filename, "wb")) import numpy as np
+pickle.dump(Q, open(p_files/filename, "wb"))
