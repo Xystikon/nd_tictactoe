@@ -2,7 +2,7 @@ import numpy as np
 import tkinter as tk
 import copy
 import pickle
-from Q_Learning_ndgame import Game, QPlayer     # Classes used for Tic Tac Toe
+from q_learning.py import Game, QPlayer     # Classes used for Tic Tac Toe
 
 root = tk.Tk()
 epsilon = 0.9
