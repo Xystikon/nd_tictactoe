@@ -3,7 +3,7 @@ import tkinter as tk
 import copy
 import pickle as pickle    # cPickle is available in Python 2.x only, otherwise use pickle
 
-from Q_Learning_ndgame import Game, HumanPlayer, QPlayer
+from q_learning import Game, HumanPlayer, QPlayer
 
 
 Q = pickle.load(open("p_files/Q_epsilon_09_Nepisodes_10000.p", "rb"))
