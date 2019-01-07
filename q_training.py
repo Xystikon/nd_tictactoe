@@ -11,8 +11,9 @@ player1 = QPlayer(mark="X",epsilon = epsilon)
 player2 = QPlayer(mark="O",epsilon = epsilon)
 game = Game(root, player1, player2)
 
-N_episodes = 10
-N = 3
+N_episodes = int(input("How many episodes? "))
+N = int(input("How many squares on each side? "))
+print(N_episodes, N)
 for episodes in range(N_episodes):
     game.play()
     game.reset()
