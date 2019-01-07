@@ -9,7 +9,7 @@ root = tk.Tk()
 epsilon = 0.9
 player1 = QPlayer(mark="X",epsilon = epsilon)
 player2 = QPlayer(mark="O",epsilon = epsilon)
-game = Game(root, player1, player2)
+game = Game(root, player1, player2, gamma=0.1)
 
 N_episodes = int(input("How many episodes? "))
 N = int(input("How many squares on each side? "))

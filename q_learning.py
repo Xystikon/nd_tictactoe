@@ -8,6 +8,10 @@ N = 3
 
 class Game:
     def __init__(self, master, player1, player2, Q_learn=None, Q={}, alpha=0.3, gamma=0.9):
+        aequals = 'alpha = '
+        gequals = 'gamma = '
+        
+        print(aequals, alpha, gequals, gamma)
         
         frame = tk.Frame()
         frame.grid()
