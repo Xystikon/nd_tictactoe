@@ -3,7 +3,7 @@ import tkinter as tk
 import copy
 import pickle
 from q_learning import Game, QPlayer     # Classes used for Tic Tac Toe
-import shutil
+#import shutil
 
 root = tk.Tk()
 epsilon = 0.9
@@ -19,10 +19,10 @@ for episodes in range(N_episodes):
 
 Q = game.Q
 
-filename = "Q_epsilon_09_Nepisodes_{}_N={}.p".format(N_episodes, N)
+filename = "p_files/Q_epsilon_09_Nepisodes_{}_N_{}.p".format(N_episodes, N)
 pickle.dump(Q, open(filename, "wb"))
 
-source = '/home/michoski/ndgame/nd_tictactoe/'
-destination = '/home/michoski/ndgame/nd_tictactoe/p_files/'
+#source = '/home/michoski/ndgame/nd_tictactoe/'
+#destination = '/home/michoski/ndgame/nd_tictactoe/p_files/'
 
-shutil.move(source+filename,destination)
+#shutil.move(source+filename,destination)
