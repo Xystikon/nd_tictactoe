@@ -5,9 +5,9 @@ import pickle as pickle    # cPickle is available in Python 2.x only, otherwise 
 
 from q_learning import Game, HumanPlayer, QPlayer
 
-epsilon = (int(input("Epsilon (in percent): ")))
-a = (int(input("Alpha (in percent): ")))
-g = (int(input("Gamma (percent): ")))
+epsilon = (int(input("Epsilon (in percent): ")))/100
+a = (int(input("Alpha (in percent): ")))/100
+g = (int(input("Gamma (percent): ")))/100
 N_episodes = input("Episodes: ")
 N = input("N: ")
 Q = pickle.load(open("p_files/Q_epsilon_{}_Nepisodes_{}_N_{}_alpha_{}_gamma_{}.p".format(epsilon, N_episodes, N, a, g), "rb"))
