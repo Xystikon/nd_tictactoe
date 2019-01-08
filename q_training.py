@@ -6,13 +6,17 @@ from q_learning import Game, QPlayer     # Classes used for Tic Tac Toe
 #import shutil
 
 root = tk.Tk()
-epsilon = 0.9
+epsilon = (int(input("Epsilon (percent): ")))/100
 player1 = QPlayer(mark="X",epsilon = epsilon)
 player2 = QPlayer(mark="O",epsilon = epsilon)
-game = Game(root, player1, player2, gamma=0.1)
 
-N_episodes = int(input("How many episodes? "))
-N = int(input("How many squares on each side? "))
+a = (int(input("Alpha (percent): ")))/100
+g = (int(input("Gamma (percent): ")))/100
+
+game = Game(root, player1, player2, alpha=a, gamma=g)
+
+N_episodes = int(input("Episodes: "))
+N = int(input("N: "))
 print(N_episodes, N)
 for episodes in range(N_episodes):
     game.play()
@@ -20,7 +24,7 @@ for episodes in range(N_episodes):
 
 Q = game.Q
 
-filename = "p_files/Q_epsilon_09_Nepisodes_{}_N_{}.p".format(N_episodes, N)
+filename = "p_files/Q_epsilon_{}_Nepisodes_{}_N_{}_alpha_{}_gamma_{}.p".format(epsilon, N_episodes, N, a, g)
 pickle.dump(Q, open(filename, "wb"))
 
 #source = '/home/michoski/ndgame/nd_tictactoe/'
