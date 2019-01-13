@@ -42,17 +42,36 @@ for outer_key, inner_dict in Q.items():
     print("i", x[i])
 
 
-plt.plot(x,y)
+plt.plot(x,y, color='orange')
+plt.suptitle('Q-Value Visualization')
+plt.xlabel('Keys', color='red', fontsize=12)
+plt.ylabel('Q-Value', color='red', fontsize=12)
 axes = plt.gca()
 axes.set_ylim([0,np.max(y)])
 axes.set_xlim([0,len(Q)])
 
-plt.savefig('output/QX.png')
+plt.savefig('output/QX.eps', format='eps')
 plt.close()
 
-plt.plot(x,y2)
+plt.plot(x,y2, color='orange')
+plt.suptitle('Q-Value Visualization')
+plt.xlabel('Keys', color='red', fontsize=12)
+plt.ylabel('Q-Value', color='red', fontsize=12)
 axes = plt.gca()
 axes.set_ylim([0,np.max(y2)])
 axes.set_xlim([0,len(Q)])
 
-plt.savefig('output/QO.png')
+plt.savefig('output/QO.eps', format='eps')
+plt.close()
+
+
+plt.plot(x,y2+y, color='orange')
+plt.suptitle('Q-Value Visualization')
+plt.xlabel('Keys', color='red', fontsize=12)
+plt.ylabel('Q-Value', color='red', fontsize=12)
+axes = plt.gca()
+axes.set_ylim([0,np.max(y2)+np.max(y)])
+axes.set_xlim([0,len(Q)])
+
+plt.savefig('output/QOplusQX.eps', format='eps')
+plt.close()
