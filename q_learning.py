@@ -90,7 +90,8 @@ class Game:
         self.buttons[i][j].configure(text=self.current_player.mark)     # Change the label on the button to the current player's mark
         self.board.place_mark(move, self.current_player.mark)           # Update the board
         if self.board.over():
-            self.declare_outcome()
+            return
+            #self.declare_outcome()
         else:
             self.switch_players()
 
@@ -101,7 +102,7 @@ class Game:
             print(("The game is over. The player with mark {mark} won!".format(mark=self.current_player.mark)))
 
     def reset(self):
-        print("Resetting...")
+        #print("Resetting...")
         for i in range(N):
             for j in range(N):
                 self.buttons[i][j].configure(text=self.empty_text)
@@ -259,6 +260,7 @@ class QPlayer(ComputerPlayer):
         super(QPlayer, self).__init__(mark=mark)
         self.Q = Q
         self.epsilon = epsilon
+        print('epsilon = ', epsilon)
 
     def get_move(self, board):
         if np.random.uniform() < self.epsilon:              # With probability epsilon, choose a move at random ("epsilon-greedy" exploration)
