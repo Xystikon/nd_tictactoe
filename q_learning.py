@@ -4,7 +4,7 @@ import copy
 import pickle as pickle    # cPickle is for Python 2.x only; in Python 3, simply "import pickle" and the accelerated version will be used automatically if available
 
 global N
-N = 3
+N = 4
 
 class Game:
     def __init__(self, master, player1, player2, Q_learn=None, Q={}, alpha=0.3, gamma=0.9):
@@ -200,11 +200,11 @@ class Board:
         if self.over():
             if self.winner() is not None:
                 if self.winner() == "X":
-                    return 100.0                    # Player X won -> positive reward
+                    return 1.0                    # Player X won -> positive reward
                 elif self.winner() == "O":
-                    return -1000000000.0            # Player O won -> negative reward
+                    return -1.0            # Player O won -> negative reward
             else:
-                return 99.0                         # A smaller positive reward for cat's game
+                return 0.99                         # A smaller positive reward for cat's game
         else:
             return 0.0                              # No reward if the game is not yet finished
 
