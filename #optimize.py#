@@ -56,15 +56,15 @@ def train_and_optimize(hyper_config):
     a = hyper_config[0]
     g = hyper_config[1]
     epsilon = hyper_config[2]
-    res = -train_Q(a,g,epsilon,N=3,N_episodes=5000)
+    res = -train_Q(a,g,epsilon,N=3,N_episodes=20000)
     return res
 
 hyper_config =[Real(0.01,0.99,name="rate"),
                Real(0.01,0.99,name="discount"),
                Real(0.01,0.99,name="prob")]
 
-res = gp_minimize(train_and_optimize, hyper_config,n_calls=1000,verbose=True,n_random_starts=100)
+res = gp_minimize(train_and_optimize, hyper_config,n_calls=37,verbose=True,n_random_starts=10)
 
-with open('results_5000_episodes_N_3_1000samples.txt', 'w') as wf:
+with open('results_2500_episodes_N_3_27samples.txt', 'w') as wf:
     wf.write(str(res))
 print(res)
